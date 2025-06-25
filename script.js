@@ -203,20 +203,44 @@ class RockPaperScissorsGame {
         // 既存のクラッカーをクリア
         this.confettiContainer.innerHTML = '';
         
-        // クラッカーを生成
-        for (let i = 0; i < 50; i++) {
+        // 第1波: 大量のクラッカーを即座に生成
+        for (let i = 0; i < 100; i++) {
             const confetti = document.createElement('div');
             confetti.className = 'confetti';
             confetti.style.left = Math.random() * 100 + '%';
-            confetti.style.animationDelay = Math.random() * 2 + 's';
-            confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            confetti.style.animationDelay = Math.random() * 0.5 + 's';
+            confetti.style.animationDuration = (Math.random() * 2 + 3) + 's';
             this.confettiContainer.appendChild(confetti);
         }
         
-        // 5秒後にクラッカーを削除
+        // 第2波: 0.5秒後に追加のクラッカー
+        setTimeout(() => {
+            for (let i = 0; i < 80; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.animationDelay = Math.random() * 0.3 + 's';
+                confetti.style.animationDuration = (Math.random() * 2 + 2.5) + 's';
+                this.confettiContainer.appendChild(confetti);
+            }
+        }, 500);
+        
+        // 第3波: 1秒後にさらに追加
+        setTimeout(() => {
+            for (let i = 0; i < 60; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.animationDelay = Math.random() * 0.2 + 's';
+                confetti.style.animationDuration = (Math.random() * 1.5 + 2) + 's';
+                this.confettiContainer.appendChild(confetti);
+            }
+        }, 1000);
+        
+        // 7秒後にクラッカーを削除
         setTimeout(() => {
             this.confettiContainer.innerHTML = '';
-        }, 5000);
+        }, 7000);
     }
 }
 
