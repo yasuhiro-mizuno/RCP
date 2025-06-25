@@ -1,0 +1,19 @@
+# ログファイル
+*.log
+
+# 一時ファイル
+*.tmp
+*.temp
+
+# OS固有ファイル
+.DS_Store
+Thumbs.db
+
+# エディタ固有ファイル
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# SVGファイル（PNGに変換済み）
+images/*.svg

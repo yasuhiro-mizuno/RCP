@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>じゃんけんゲーム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>じゃんけんゲーム</h1>
+        
+        <div class="game-area">
+            <div class="player-section">
+                <h2>あなたの選択</h2>
+                <div class="choices">
+                    <button class="choice-btn" data-choice="rock">
+                        <img src="images/rock.png" alt="グー">
+                        <span>グー</span>
+                    </button>
+                    <button class="choice-btn" data-choice="paper">
+                        <img src="images/paper.png" alt="パー">
+                        <span>パー</span>
+                    </button>
+                    <button class="choice-btn" data-choice="scissors">
+                        <img src="images/scissors.png" alt="チョキ">
+                        <span>チョキ</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="vs-section">
+                <div class="vs">VS</div>
+            </div>
+            
+            <div class="computer-section">
+                <h2>コンピューターの選択</h2>
+                <div class="computer-choice">
+                    <img id="computer-img" src="images/question.png" alt="？">
+                    <span id="computer-text">？</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="result-section">
+            <div id="result" class="result"></div>
+            <div id="score" class="score">
+                <span>勝ち: <span id="wins">0</span></span>
+                <span>負け: <span id="losses">0</span></span>
+                <span>引き分け: <span id="draws">0</span></span>
+            </div>
+        </div>
+        
+        <button id="reset-btn" class="reset-btn">リセット</button>
+    </div>
+    
+    <!-- クラッカーアニメーション用 -->
+    <div id="confetti-container"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
